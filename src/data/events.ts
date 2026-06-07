@@ -90,8 +90,8 @@ export const events: HistoricalEvent[] = [
       { l: 'Religion', v: 'Eastern Orthodoxy' }
     ],
     sources: [
-      { title: 'UNESCO - St. Sophia Cathedral', url: 'https://whc.unesco.org/en/list/527' },
-      { title: 'Encyclopedia of Ukraine', url: 'http://www.encyclopediaofukraine.com/display.asp?linkpath=pages%5CC%5CH%5CChristianizationofUkraine.htm' }
+      { title: 'Encyclopedia of Ukraine - Christianization', url: 'http://www.encyclopediaofukraine.com/display.asp?linkpath=pages%5CC%5CH%5CChristianizationofUkraine.htm' },
+      { title: 'Britannica - St. Vladimir', url: 'https://www.britannica.com/biography/Saint-Vladimir' }
     ],
     featured: true
   },
@@ -112,6 +112,7 @@ export const events: HistoricalEvent[] = [
       { l: 'Legacy', v: 'Rus\' Justice (Code of Laws)' }
     ],
     sources: [
+      { title: 'Encyclopedia of Ukraine - Yaroslav the Wise', url: 'http://www.encyclopediaofukraine.com/display.asp?linkpath=pages%5CY%5CA%5CYaroslavtheWise.htm' },
       { title: 'Britannica - Yaroslav I', url: 'https://www.britannica.com/biography/Yaroslav-I' }
     ]
   },
@@ -132,7 +133,7 @@ export const events: HistoricalEvent[] = [
       { l: 'Named after', v: 'Lev Danylovych' }
     ],
     sources: [
-      { title: 'Lviv City Council - History', url: 'https://city-adm.lviv.ua/lviv/history' },
+      { title: 'Encyclopedia of Ukraine - Lviv', url: 'http://www.encyclopediaofukraine.com/display.asp?linkpath=pages%5CL%5CV%5CLviv.htm' },
       { title: 'UNESCO - Lviv Historic Centre', url: 'https://whc.unesco.org/en/list/865' }
     ]
   },
@@ -153,7 +154,7 @@ export const events: HistoricalEvent[] = [
       { l: 'Key Publication', v: 'Ostroh Bible (1581)' }
     ],
     sources: [
-      { title: 'Ostroh Academy Official Site', url: 'https://www.oa.edu.ua/en/about/history/' }
+      { title: 'Encyclopedia of Ukraine - Ostroh Academy', url: 'http://www.encyclopediaofukraine.com/display.asp?linkpath=pages%5CO%5CS%5COstrohAcademy.htm' }
     ]
   },
   {
@@ -174,7 +175,8 @@ export const events: HistoricalEvent[] = [
       { l: 'Entity', v: 'Cossack Hetmanate' }
     ],
     sources: [
-      { title: 'Ukraine.ua - Cossack Era', url: 'https://ukraine.ua/visit/history/cossacks/' }
+      { title: 'Encyclopedia of Ukraine - Khmelnytsky Uprising', url: 'http://www.encyclopediaofukraine.com/display.asp?linkpath=pages%5CK%5CH%5CKhmelnytskyUprising.htm' },
+      { title: 'Britannica - Cossack', url: 'https://www.britannica.com/topic/Cossack' }
     ]
   },
   {
@@ -194,7 +196,7 @@ export const events: HistoricalEvent[] = [
       { l: 'Type', v: 'Democratic Constitution' }
     ],
     sources: [
-      { title: 'Pylyp Orlyk Constitution', url: 'https://mfa.gov.ua/en/news-history/341-pylyp-orlyk-constitution' }
+      { title: 'Encyclopedia of Ukraine - Constitution of Pylyp Orlyk', url: 'http://www.encyclopediaofukraine.com/display.asp?linkpath=pages%5CC%5CO%5CConstitutionofPylypOrlyk.htm' }
     ]
   },
   {
@@ -214,7 +216,7 @@ export const events: HistoricalEvent[] = [
       { l: 'Significance', v: 'Birth of modern literature' }
     ],
     sources: [
-      { title: 'Kotlyarevsky Foundation', url: 'https://kotlyarevsky.com.ua/history/' }
+      { title: 'Encyclopedia of Ukraine - Kotliarevsky', url: 'http://www.encyclopediaofukraine.com/display.asp?linkpath=pages%5CK%5CO%5CKotliarevskyIvan.htm' }
     ]
   },
   {
@@ -235,7 +237,8 @@ export const events: HistoricalEvent[] = [
       { l: 'Impact', v: 'National Bard' }
     ],
     sources: [
-      { title: 'Shevchenko Museum', url: 'https://museumshevchenko.org.ua/en/' }
+      { title: 'Encyclopedia of Ukraine - Shevchenko National Museum', url: 'http://www.encyclopediaofukraine.com/display.asp?linkpath=pages%5CS%5CH%5CShevchenkoNationalMuseum.htm' },
+      { title: 'Shevchenko Museum Official Site', url: 'https://museumshevchenko.org.ua/en/' }
     ]
   },
   {
@@ -275,7 +278,8 @@ export const events: HistoricalEvent[] = [
       { l: 'Context', v: 'Cultural Boom' }
     ],
     sources: [
-      { title: 'Ukrainian Institute - Executed Renaissance', url: 'https://ui.org.ua/en/executed-renaissance/' }
+      { title: 'Encyclopedia of Ukraine - Literature 1930s', url: 'http://www.encyclopediaofukraine.com/display.asp?linkpath=pages%5CL%5CI%5CLiterature.htm' },
+      { title: 'Ukrainian Institute - Executed Renaissance', url: 'https://ui.org.ua/en/project/executed-renaissance/' }
     ]
   },
   {
@@ -292,7 +296,7 @@ export const events: HistoricalEvent[] = [
     ],
     stats: [
       { l: 'Date', v: 'April 26, 1986' },
-      { l: 'Status', v: 'UNESCO Heritage Site Proposal' }
+      { l: 'Status', v: 'Exclusion Zone' }
     ],
     sources: [
       { title: 'IAEA - Chornobyl Recovery', url: 'https://www.iaea.org/topics/chornobyl' },
@@ -317,7 +321,8 @@ export const events: HistoricalEvent[] = [
       { l: 'Referendum Support', v: '92.3%' }
     ],
     sources: [
-      { title: 'Verkhovna Rada - Act of Independence', url: 'https://zakon.rada.gov.ua/laws/show/1427-12?lang=en' }
+      { title: 'United Nations Peacemaker - Independence Act', url: 'https://peacemaker.un.org/ukraine-independence-act91' },
+      { title: 'Declaration of Independence - Wikisource', url: 'https://en.wikisource.org/wiki/Declaration_of_Independence_of_Ukraine' }
     ]
   },
   {
@@ -337,6 +342,7 @@ export const events: HistoricalEvent[] = [
       { l: 'Most Recent', v: 'Kalush Orchestra (2022)' }
     ],
     sources: [
+      { title: 'Eurovision World - Ukraine Profile', url: 'https://eurovisionworld.com/eurovision/ukraine' },
       { title: 'Eurovision.tv - Ukraine Profile', url: 'https://eurovision.tv/country/ukraine' }
     ]
   },
