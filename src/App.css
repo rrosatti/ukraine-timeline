@@ -180,10 +180,13 @@ body {
   border-color: var(--text-main);
 }
 
-.filter-btn.active.ruler { background: var(--color-ruler); border-color: var(--color-ruler); }
-.filter-btn.active.culture { background: var(--color-culture); border-color: var(--color-culture); }
-.filter-btn.active.milestone { background: var(--color-milestone); border-color: var(--color-milestone); }
-.filter-btn.active.conflict { background: var(--color-conflict); border-color: var(--color-conflict); }
+.filter-btn.active.cuisine { background: var(--color-ruler); border-color: var(--color-ruler); }
+.filter-btn.active.tradition { background: var(--color-culture); border-color: var(--color-culture); }
+.filter-btn.active.literature { background: var(--color-milestone); border-color: var(--color-milestone); }
+.filter-btn.active.art { background: var(--color-ruler); border-color: var(--color-ruler); }
+.filter-btn.active.music { background: var(--color-culture); border-color: var(--color-culture); }
+.filter-btn.active.geography { background: var(--color-milestone); border-color: var(--color-milestone); }
+.filter-btn.active.architecture { background: var(--color-conflict); border-color: var(--color-conflict); }
 
 .era-jump-nav {
   display: flex;
@@ -327,10 +330,13 @@ body {
 }
 
 /* Categorical Card Backgrounds */
-.type-ruler .event-card { background: var(--bg-ruler); border-left-color: var(--color-ruler); }
-.type-culture .event-card { background: var(--bg-culture); border-left-color: var(--color-culture); }
-.type-milestone .event-card { background: var(--bg-milestone); border-left-color: var(--color-milestone); }
-.type-conflict .event-card { background: var(--bg-conflict); border-left-color: var(--color-conflict); }
+.type-cuisine .event-card { background: var(--bg-ruler); border-left-color: var(--color-ruler); }
+.type-tradition .event-card { background: var(--bg-culture); border-left-color: var(--color-culture); }
+.type-literature .event-card { background: var(--bg-milestone); border-left-color: var(--color-milestone); }
+.type-art .event-card { background: var(--bg-ruler); border-left-color: var(--color-ruler); }
+.type-music .event-card { background: var(--bg-culture); border-left-color: var(--color-culture); }
+.type-geography .event-card { background: var(--bg-milestone); border-left-color: var(--color-milestone); }
+.type-architecture .event-card { background: var(--bg-conflict); border-left-color: var(--color-conflict); }
 
 .event:hover .event-card {
   box-shadow: 0 20px 50px rgba(0,0,0,0.06);
@@ -359,10 +365,13 @@ body {
   border: 1px solid rgba(0,0,0,0.05);
 }
 
-.badge-ruler { color: var(--color-ruler); }
-.badge-culture { color: var(--color-culture); }
-.badge-milestone { color: var(--color-milestone); }
-.badge-conflict { color: white; background: var(--color-conflict); }
+.badge-cuisine { color: var(--color-ruler); }
+.badge-tradition { color: var(--color-culture); }
+.badge-literature { color: var(--color-milestone); }
+.badge-art { color: var(--color-ruler); }
+.badge-music { color: var(--color-culture); }
+.badge-geography { color: var(--color-milestone); }
+.badge-architecture { color: white; background: var(--color-conflict); }
 
 .event-actions {
   display: flex;

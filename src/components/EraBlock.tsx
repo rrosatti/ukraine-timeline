@@ -1,11 +1,11 @@
 import React from "react";
-import { getEventId } from "../data/events";
-import type { Era, HistoricalEvent, Category } from "../data/events";
+import { getItemId } from "../data/culture";
+import type { CulturalPillar, CultureItem, Category } from "../data/culture";
 import EventCard from "./EventCard";
 
 interface EraBlockProps {
-  era: Era;
-  events: HistoricalEvent[];
+  pillar: CulturalPillar;
+  items: CultureItem[];
   originalIndices: number[];
   currentFilter: Category | "all";
   expandedIndex: number | null;
@@ -13,47 +13,45 @@ interface EraBlockProps {
 }
 
 export const EraBlock: React.FC<EraBlockProps> = ({
-  era,
-  events,
+  pillar,
+  items,
   originalIndices,
   currentFilter,
   expandedIndex,
   onToggleExpand,
 }: EraBlockProps) => {
-  const [title] = era.label.split("·").map((part) => part.trim());
-  const hasVisible = events.some(
+  const hasVisible = items.some(
     (e) => currentFilter === "all" || e.category === currentFilter,
   );
-  const visibleCount = events.filter(
-    (event) => currentFilter === "all" || event.category === currentFilter,
+  const visibleCount = items.filter(
+    (item) => currentFilter === "all" || item.category === currentFilter,
   ).length;
 
   if (!hasVisible) return null;
 
   return (
-    <section className="era-block" id={era.id}>
+    <section className="era-block" id={pillar.id}>
       <div className="era-header">
-        <div className="era-label">{title}</div>
-        <div className="era-intro">{era.intro}</div>
+        <div className="era-label">{pillar.label}</div>
+        <div className="era-intro">{pillar.intro}</div>
         <div
           className="era-meta"
           style={{ marginTop: "0.5rem", fontSize: "13px", color: "#8c8279" }}
         >
-          <span>{visibleCount} events in this period</span>
+          <span>{visibleCount} items in this category</span>
         </div>
       </div>
-      {events.map((event, i) => {
+      {items.map((item, i) => {
         const globalIndex = originalIndices[i];
-        const hidden =
-          currentFilter !== "all" && event.category !== currentFilter;
+        const hidden = currentFilter !== "all" && item.category !== currentFilter;
 
         if (hidden) return null;
 
         return (
           <EventCard
-            key={getEventId(event)}
-            eventId={getEventId(event)}
-            event={event}
+            key={getItemId(item)}
+            itemId={getItemId(item)}
+            item={item}
             isExpanded={expandedIndex === globalIndex}
             onToggle={() => onToggleExpand(globalIndex)}
           />

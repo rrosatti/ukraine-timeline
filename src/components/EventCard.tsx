@@ -1,36 +1,42 @@
 import React from 'react';
-import type { HistoricalEvent, Category } from "../data/events";
+import type { CultureItem, Category } from "../data/culture";
 import ChevronIcon from "./ChevronIcon";
 
 const badgeClassMap: Record<Category, string> = {
-  ruler: "badge-ruler",
-  culture: "badge-culture",
-  milestone: "badge-milestone",
-  conflict: "badge-conflict",
+  cuisine: "badge-cuisine",
+  tradition: "badge-tradition",
+  literature: "badge-literature",
+  art: "badge-art",
+  music: "badge-music",
+  geography: "badge-geography",
+  architecture: "badge-architecture",
 };
 
 const badgeTextMap: Record<Category, string> = {
-  ruler: "Leader",
-  culture: "Culture",
-  milestone: "Milestone",
-  conflict: "Conflict",
+  cuisine: "Cuisine",
+  tradition: "Tradition",
+  literature: "Literature",
+  art: "Art",
+  music: "Music",
+  geography: "Geography",
+  architecture: "Architecture",
 };
 
 interface EventCardProps {
-  eventId: string;
-  event: HistoricalEvent;
+  itemId: string;
+  item: CultureItem;
   isExpanded: boolean;
   onToggle: () => void;
 }
 
 export const EventCard: React.FC<EventCardProps> = ({
-  eventId,
-  event,
+  itemId,
+  item,
   isExpanded,
   onToggle,
 }: EventCardProps) => {
-  const className = `event type-${event.category}${event.featured ? " featured" : ""}${isExpanded ? " expanded" : ""}`;
-  const stats = event.stats || [];
+  const className = `event type-${item.category}${item.featured ? " featured" : ""}${isExpanded ? " expanded" : ""}`;
+  const stats = item.stats || [];
   const [leadStat, ...otherStats] = stats;
 
   function handleShare(eventClick: React.MouseEvent<HTMLAnchorElement>) {
@@ -38,22 +44,22 @@ export const EventCard: React.FC<EventCardProps> = ({
   }
 
   return (
-    <div className={className} id={eventId} onClick={onToggle}>
-      <div className="event-year">{event.year}</div>
+    <div className={className} id={itemId} onClick={onToggle}>
+      <div className="event-year">{item.year || ''}</div>
       <div className="event-dot-wrap">
         <div className="event-dot" />
       </div>
       <div className="event-card">
         <div className="event-topline">
-          <span className={`event-badge ${badgeClassMap[event.category]}`}>
-            {badgeTextMap[event.category]}
+          <span className={`event-badge ${badgeClassMap[item.category]}`}>
+            {badgeTextMap[item.category]}
           </span>
           <div className="event-actions">
             <a
               className="event-share-link"
-              href={`#${eventId}`}
+              href={`#${itemId}`}
               onClick={handleShare}
-              aria-label={`Link to ${event.title}`}
+              aria-label={`Link to ${item.title}`}
               title="Copyable link"
             >
             </a>
@@ -62,17 +68,17 @@ export const EventCard: React.FC<EventCardProps> = ({
         </div>
         <div className="event-title-row">
           <div className="event-title">
-            {event.title}
-            {event.featured && <span className="featured-flag">Featured</span>}
+            {item.title}
+            {item.featured && <span className="featured-flag">Featured</span>}
           </div>
         </div>
-        <div className="event-summary">{event.summary}</div>
+        <div className="event-summary">{item.summary}</div>
         
         <div className="event-expand">
           <div className="event-body">
-            {event.details && event.details.length > 0 && (
+            {item.details && item.details.length > 0 && (
               <ul className="event-details-list">
-                {event.details.map((detail, idx) => (
+                {item.details.map((detail, idx) => (
                   <li key={idx}>{detail}</li>
                 ))}
               </ul>
@@ -95,12 +101,12 @@ export const EventCard: React.FC<EventCardProps> = ({
               </div>
             )}
 
-            {event.sources && event.sources.length > 0 && (
+            {item.sources && item.sources.length > 0 && (
               <div className="event-sources" style={{ marginTop: '1rem', fontSize: '13px' }}>
                 <span style={{ color: '#8c8279', textTransform: 'uppercase', letterSpacing: '1px' }}>Sources:</span>
                 <div style={{ display: 'flex', gap: '10px', marginTop: '0.5rem' }}>
-                  {event.sources.map((source, idx) => (
-                    <a key={idx} href={source.url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-blue)', textDecoration: 'none' }} onClick={(e) => e.stopPropagation()}>
+                  {item.sources.map((source, idx) => (
+                    <a key={idx} href={source.url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ua-blue)', textDecoration: 'none' }} onClick={(e) => e.stopPropagation()}>
                       {source.title}
                     </a>
                   ))}
