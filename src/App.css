@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Elegant, historical color palette */
+  --bg-primary: #fcfbfa;       /* Off-white canvas paper texture feel */
+  --bg-card: #ffffff;
+  --text-main: #1c1a17;       /* Soft charcoal instead of harsh black */
+  --accent-blue: #0057b7;     /* Deep sky blue accent */
+  --accent-gold: #ffd700;     /* Warm historic gold accent */
+  --timeline-line: #e2dfda;
+  
+  /* Category color codes */
+  --color-ruler: #c19a6b;     /* Deep bronze/gold */
+  --color-culture: #bd3a42;   /* Traditional Ukrainian Vyshyvanka Red */
+  --color-milestone: #2f5233; /* Soft pine green */
+  --color-conflict: #4a4a4a;  /* Neutral charcoal */
+
+  --shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.08);
+  --panel: rgba(255, 255, 255, 0.9);
+  --panel-strong: #ffffff;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: "Lora", serif;
+}
+
+.ukraine-root {
+  min-height: 100vh;
+}
+
+.hero {
+  background: 
+    linear-gradient(180deg, rgba(0, 87, 183, 0.05) 0%, rgba(255, 215, 0, 0.05) 100%),
+    var(--bg-card);
+  padding: 4.5rem 2rem 3.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--timeline-line);
+  position: relative;
+}
+
+.trident-icon {
+  width: 100px;
+  height: auto;
+  margin: 0 auto 1.5rem;
+  display: block;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.1));
+}
+
+.hero h1 {
+  font-family: "Cinzel", serif;
+  font-size: 56px;
+  color: var(--text-main);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.hero .sub {
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #6a6159;
+  text-transform: uppercase;
+  font-family: "Lora", serif;
+  font-style: italic;
+}
+
+.meta-stats {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.meta-stat {
+  text-align: center;
+  min-width: 160px;
+  padding: 1.2rem 1.5rem;
+  border: 1px solid var(--timeline-line);
+  border-radius: 4px;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-soft);
+}
+
+.meta-stat .num {
+  font-family: "Cinzel", serif;
+  font-size: 32px;
+  color: var(--accent-blue);
+  line-height: 1;
+}
+
+.meta-stat .lbl {
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  color: #8c8279;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  padding: 1.2rem 2rem;
+  background: rgba(252, 251, 250, 0.9);
+  border-bottom: 1px solid var(--timeline-line);
+  overflow-x: auto;
+  scrollbar-width: none;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  justify-content: center;
+}
+
+.filter-btn {
+  flex-shrink: 0;
+  padding: 10px 22px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-family: "Lora", serif;
+  cursor: pointer;
+  border: 1px solid var(--timeline-line);
+  background: var(--bg-card);
+  color: #6a6159;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: #f5f3f0;
+  border-color: #d1cdc7;
+}
+
+.filter-btn.active {
+  background: var(--text-main);
+  border-color: var(--text-main);
+  color: white;
+}
+
+.filter-btn.active.ruler { background: var(--color-ruler); border-color: var(--color-ruler); }
+.filter-btn.active.culture { background: var(--color-culture); border-color: var(--color-culture); }
+.filter-btn.active.milestone { background: var(--color-milestone); border-color: var(--color-milestone); }
+.filter-btn.active.conflict { background: var(--color-conflict); border-color: var(--color-conflict); }
+
+.timeline-wrap {
+  padding: 3rem 2rem 5rem;
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.timeline-line {
+  position: absolute;
+  left: calc(2rem + 100px + 20px);
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--timeline-line);
+}
+
+.era-block {
+  margin-bottom: 4rem;
+}
+
+.era-header {
+  padding-left: calc(100px + 40px);
+  margin-bottom: 2rem;
+}
+
+.era-label {
+  font-family: "Cinzel", serif;
+  font-size: 28px;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.era-intro {
+  color: #6a6159;
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+.event {
+  display: flex;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.event-year {
+  width: 100px;
+  flex-shrink: 0;
+  text-align: right;
+  padding-right: 25px;
+  font-family: "Cinzel", serif;
+  font-size: 20px;
+  color: #8c8279;
+  padding-top: 15px;
+}
+
+.event-dot-wrap {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  padding-top: 22px;
+  position: relative;
+  z-index: 2;
+}
+
+.event-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--timeline-line);
+  border: 2px solid var(--bg-primary);
+  transition: all 0.3s ease;
+}
+
+.event:hover .event-dot, .event.expanded .event-dot {
+  transform: scale(1.5);
+  background: var(--accent-blue);
+}
+
+.event-card {
+  flex: 1;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--timeline-line);
+  border-radius: 4px;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+}
+
+.event:hover .event-card {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.event-title {
+  font-family: "Cinzel", serif;
+  font-size: 22px;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.event-summary {
+  color: #4a4a4a;
+  line-height: 1.6;
+}
+
+.event-expand {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.event.expanded .event-expand {
+  max-height: 1000px;
+}
+
+.event-body {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--timeline-line);
+}
+
+.event-details-list {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.event-details-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.event-details-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-gold);
+}
+
+.stat-pills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.stat-pill {
+  font-size: 13px;
+  padding: 6px 12px;
+  background: #f5f3f0;
+  border-radius: 2px;
+  border: 1px solid var(--timeline-line);
+  color: #6a6159;
+}
+
+.stat-pill strong {
+  color: var(--text-main);
+}
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 36px; }
+  .timeline-line { left: 85px; }
+  .event-year { width: 65px; font-size: 16px; }
+  .era-header { padding-left: 85px; }
+}
