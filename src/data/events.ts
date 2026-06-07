@@ -44,7 +44,7 @@ export const eras: Era[] = [
     id: 'medieval', 
     label: 'Kyivan Rus\' · 988 – 1240',
     intro: 'The foundational era of Ukrainian statehood, marked by the Christianization of Rus\' and the rise of Kyiv as a major European power.',
-    years: [988, 1240]
+    years: [800, 1240]
   },
   { 
     id: 'cossack', 
@@ -98,6 +98,11 @@ export const events: HistoricalEvent[] = [
     category: 'ruler',
     eraId: 'medieval',
     summary: 'A golden age of Kyivan Rus\', known for legal reforms and cultural expansion.',
+    details: [
+      'Compiled the first legal code, "Rus\' Justice" (Ruska Pravda).',
+      'Established the first schools and library at St. Sophia Cathedral.',
+      'Strengthened international ties through dynastic marriages across Europe.'
+    ],
     stats: [
       { l: 'Title', v: 'Grand Prince of Kyiv' },
       { l: 'Legacy', v: 'Rus\' Justice (Code of Laws)' }
@@ -111,9 +116,31 @@ export const events: HistoricalEvent[] = [
     eraId: 'cossack',
     summary: 'Bohdan Khmelnytsky leads a massive Cossack revolt against Polish rule.',
     featured: true,
+    details: [
+      'Formation of the Cossack Hetmanate.',
+      'Major battles at Zhovti Vody and Korsun.',
+      'Significant shift in the geopolitical balance of Eastern Europe.'
+    ],
     stats: [
       { l: 'Leader', v: 'Bohdan Khmelnytsky' },
       { l: 'Entity', v: 'Cossack Hetmanate' }
+    ]
+  },
+  {
+    id: 'constitution-pylyp-orlyk',
+    year: 1710,
+    title: 'Constitution of Pylyp Orlyk',
+    category: 'milestone',
+    eraId: 'cossack',
+    summary: 'One of the first democratic constitutions in the world, drafted by Hetman Pylyp Orlyk.',
+    details: [
+      'Established the separation of powers between executive, legislative, and judicial branches.',
+      'Defined the rights and obligations of the government and the governed.',
+      'Drafted in exile after the Battle of Poltava.'
+    ],
+    stats: [
+      { l: 'Author', v: 'Pylyp Orlyk' },
+      { l: 'Type', v: 'Democratic Constitution' }
     ]
   },
   {
@@ -123,9 +150,49 @@ export const events: HistoricalEvent[] = [
     category: 'culture',
     eraId: 'revival',
     summary: 'Ivan Kotlyarevsky publishes the first work in the modern Ukrainian vernacular.',
+    details: [
+      'A mock-heroic poem based on Virgil\'s Aeneid.',
+      'Preserved Ukrainian folk traditions and language.',
+      'Sparked the Ukrainian national awakening.'
+    ],
     stats: [
       { l: 'Author', v: 'Ivan Kotlyarevsky' },
       { l: 'Significance', v: 'Birth of modern literature' }
+    ]
+  },
+  {
+    id: 'shevchenko-kobzar',
+    year: 1840,
+    title: 'Publication of Kobzar',
+    category: 'culture',
+    eraId: 'revival',
+    summary: 'Taras Shevchenko publishes his first collection of poems, becoming the national bard.',
+    featured: true,
+    details: [
+      'Central work of Ukrainian literature.',
+      'Expressed the aspirations for national freedom and social justice.',
+      'Unified the Ukrainian people through shared language and history.'
+    ],
+    stats: [
+      { l: 'Author', v: 'Taras Shevchenko' },
+      { l: 'Impact', v: 'National Bard' }
+    ]
+  },
+  {
+    id: 'executed-renaissance',
+    year: '1920-1930',
+    title: 'The Executed Renaissance',
+    category: 'culture',
+    eraId: 'avant-garde',
+    summary: 'A vibrant explosion of Ukrainian arts and culture, tragically cut short by Soviet repression.',
+    details: [
+      'Thriving of literature, theater, and visual arts.',
+      'Emphasis on "European orientation" (Mykola Khvylovy).',
+      'Mass arrests and executions of intellectuals by the Soviet regime.'
+    ],
+    stats: [
+      { l: 'Key Figure', v: 'Mykola Khvylovy' },
+      { l: 'Fate', v: 'Soviet Repression' }
     ]
   },
   {
@@ -136,9 +203,31 @@ export const events: HistoricalEvent[] = [
     eraId: 'modern',
     summary: 'Ukraine restores its independence following the collapse of the Soviet Union.',
     featured: true,
+    details: [
+      'Adopted by the Verkhovna Rada (Parliament) on August 24.',
+      'Confirmed by a national referendum with overwhelming support.',
+      'Beginning of the modern sovereign Ukrainian state.'
+    ],
     stats: [
       { l: 'Date', v: 'August 24, 1991' },
       { l: 'Referendum Support', v: '92.3%' }
+    ]
+  },
+  {
+    id: 'revolution-of-dignity',
+    year: '2013-2014',
+    title: 'Revolution of Dignity',
+    category: 'milestone',
+    eraId: 'modern',
+    summary: 'Protests in Kyiv lead to the ousting of pro-Russian president Viktor Yanukovych.',
+    details: [
+      'Sparked by the government\'s refusal to sign the EU Association Agreement.',
+      'Centered on Maidan Nezalezhnosti (Independence Square).',
+      'Reaffirmed Ukraine\'s European choice and democratic values.'
+    ],
+    stats: [
+      { l: 'Outcome', v: 'Ousting of Yanukovych' },
+      { l: 'Focus', v: 'European Integration' }
     ]
   }
 ];
