@@ -25,9 +25,7 @@ export const Timeline: React.FC<TimelineProps> = ({
         const originalIndices: number[] = [];
 
         events.forEach((e, i) => {
-          // Handle both number and string ranges for years
-          const startYear = typeof e.year === 'number' ? e.year : parseInt(e.year.split('-')[0]);
-          if (startYear >= (era.years[0] as number) && startYear <= (era.years[1] as number)) {
+          if (e.eraId === era.id) {
             eraEvents.push(e);
             originalIndices.push(i);
           }
