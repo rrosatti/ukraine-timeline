@@ -1,36 +1,33 @@
 import React from 'react';
-import type { Era, Category, HistoricalEvent } from "../data/events";
+import type { CulturalPillar, CultureItem, Category } from "../data/culture";
 
 interface EraJumpNavProps {
-  eras: Era[];
-  events: HistoricalEvent[];
+  pillars: CulturalPillar[];
+  items: CultureItem[];
   currentFilter: Category | "all";
 }
 
 export const EraJumpNav: React.FC<EraJumpNavProps> = ({
-  eras,
-  events,
+  pillars,
+  items,
   currentFilter,
 }: EraJumpNavProps) => {
-  const visibleEras = eras.filter((era) =>
-    events.some((event) => {
-      const startYear = typeof event.year === 'number' ? event.year : parseInt(event.year.split('-')[0]);
-      const matchesEra = startYear >= (era.years[0] as number) && startYear <= (era.years[1] as number);
-      const matchesFilter = currentFilter === "all" || event.category === currentFilter;
-      return matchesEra && matchesFilter;
+  const visiblePillars = pillars.filter((pillar) =>
+    items.some((item) => {
+      const matchesPillar = item.pillarId === pillar.id;
+      const matchesFilter = currentFilter === "all" || item.category === currentFilter;
+      return matchesPillar && matchesFilter;
     }),
   );
 
   return (
-    <nav className="era-jump-nav" aria-label="Jump to era">
-      <div className="era-jump-label">Jump to era</div>
+    <nav className="era-jump-nav" aria-label="Jump to category">
+      <div className="era-jump-label">Jump to</div>
       <div className="era-jump-links">
-        {visibleEras.map((era) => {
-          const [title] = era.label.split("·").map((part) => part.trim());
-
+        {visiblePillars.map((pillar) => {
           return (
-            <a key={era.id} className="era-jump-link" href={`#${era.id}`}>
-              {title}
+            <a key={pillar.id} className="era-jump-link" href={`#${pillar.id}`}>
+              {pillar.label}
             </a>
           );
         })}
