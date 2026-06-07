@@ -1,28 +1,31 @@
 import React from 'react';
-import type { HistoricalEvent, Category } from "../data/events";
+import type { CultureItem, Category } from "../data/culture";
 
 interface FilterBarProps {
-  events: HistoricalEvent[];
+  items: CultureItem[];
   currentFilter: Category | "all";
   onFilterChange: (filter: Category | "all") => void;
 }
 
 const filters: { key: Category | "all"; label: string; typeClass: string }[] =
   [
-    { key: "all", label: "All Events", typeClass: "" },
-    { key: "ruler", label: "Leaders", typeClass: "ruler" },
-    { key: "culture", label: "Culture", typeClass: "culture" },
-    { key: "milestone", label: "Milestones", typeClass: "milestone" },
-    { key: "conflict", label: "Conflicts", typeClass: "conflict" },
+    { key: "all", label: "All", typeClass: "" },
+    { key: "cuisine", label: "Cuisine", typeClass: "cuisine" },
+    { key: "tradition", label: "Traditions", typeClass: "tradition" },
+    { key: "literature", label: "Literature", typeClass: "literature" },
+    { key: "art", label: "Art", typeClass: "art" },
+    { key: "music", label: "Music", typeClass: "music" },
+    { key: "geography", label: "Geography", typeClass: "geography" },
+    { key: "architecture", label: "Architecture", typeClass: "architecture" },
   ];
 
 export const FilterBar: React.FC<FilterBarProps> = ({
-  events,
+  items,
   currentFilter,
   onFilterChange,
 }: FilterBarProps) => {
-  const counts: Record<string, number> = { all: events.length };
-  for (const e of events) {
+  const counts: Record<string, number> = { all: items.length };
+  for (const e of items) {
     counts[e.category] = (counts[e.category] || 0) + 1;
   }
 
@@ -40,7 +43,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             className={className}
             onClick={() => onFilterChange(key)}
           >
-            {label} <span className="count-badge">{counts[key] || 0}</span>
+            {label}
           </button>
         );
       })}

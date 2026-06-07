@@ -1,18 +1,18 @@
 import React from 'react';
-import type { HistoricalEvent, Era, Category } from "../data/events";
+import type { CultureItem, CulturalPillar, Category } from "../data/culture";
 import EraBlock from "./EraBlock";
 
 interface TimelineProps {
-  events: HistoricalEvent[];
-  eras: Era[];
+  items: CultureItem[];
+  pillars: CulturalPillar[];
   currentFilter: Category | "all";
   expandedIndex: number | null;
   onToggleExpand: (index: number) => void;
 }
 
 export const Timeline: React.FC<TimelineProps> = ({
-  events,
-  eras,
+  items,
+  pillars,
   currentFilter,
   expandedIndex,
   onToggleExpand,
@@ -20,24 +20,24 @@ export const Timeline: React.FC<TimelineProps> = ({
   return (
     <div className="timeline-wrap">
       <div className="timeline-line" />
-      {eras.map((era) => {
-        const eraEvents: HistoricalEvent[] = [];
+      {pillars.map((pillar) => {
+        const pillarItems: CultureItem[] = [];
         const originalIndices: number[] = [];
 
-        events.forEach((e, i) => {
-          if (e.eraId === era.id) {
-            eraEvents.push(e);
+        items.forEach((item, i) => {
+          if (item.pillarId === pillar.id) {
+            pillarItems.push(item);
             originalIndices.push(i);
           }
         });
 
-        if (eraEvents.length === 0) return null;
+        if (pillarItems.length === 0) return null;
 
         return (
           <EraBlock
-            key={era.id}
-            era={era}
-            events={eraEvents}
+            key={pillar.id}
+            pillar={pillar}
+            items={pillarItems}
             originalIndices={originalIndices}
             currentFilter={currentFilter}
             expandedIndex={expandedIndex}
