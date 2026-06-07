@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
 import type { CultureItem, CulturalPillar, Category } from "../data/culture";
+import type { Locale } from "../data/localization";
 import EraBlock from "./EraBlock";
 
 interface TimelineProps {
   items: CultureItem[];
   pillars: CulturalPillar[];
   currentFilter: Category | "all";
+  locale: Locale;
   expandedIndex: number | null;
   onToggleExpand: (index: number) => void;
 }
@@ -14,6 +16,7 @@ export const Timeline: React.FC<TimelineProps> = ({
   items,
   pillars,
   currentFilter,
+  locale,
   expandedIndex,
   onToggleExpand,
 }: TimelineProps) => {
@@ -40,6 +43,7 @@ export const Timeline: React.FC<TimelineProps> = ({
             items={pillarItems}
             originalIndices={originalIndices}
             currentFilter={currentFilter}
+            locale={locale}
             expandedIndex={expandedIndex}
             onToggleExpand={onToggleExpand}
           />
