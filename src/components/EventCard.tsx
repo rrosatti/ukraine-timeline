@@ -56,7 +56,6 @@ export const EventCard: React.FC<EventCardProps> = ({
               aria-label={`Link to ${event.title}`}
               title="Copyable link"
             >
-              #
             </a>
             <ChevronIcon expanded={isExpanded} />
           </div>
