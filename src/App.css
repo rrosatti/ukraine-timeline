@@ -67,6 +67,44 @@ body {
   background: linear-gradient(90deg, var(--ua-blue) 50%, var(--ua-gold) 50%);
 }
 
+.language-toggle {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: inline-flex;
+  gap: 0.25rem;
+  padding: 0.3rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--timeline-line);
+  border-radius: 999px;
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(10px);
+}
+
+.language-toggle-btn {
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  font-family: "Lora", serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+}
+
+.language-toggle-btn:hover {
+  color: var(--text-main);
+}
+
+.language-toggle-btn.active {
+  background: var(--text-main);
+  color: white;
+}
+
 .trident-icon {
   margin: 0 auto 2.5rem;
   display: flex;
@@ -401,6 +439,11 @@ body {
   line-height: 1.2;
 }
 
+.event-summary {
+  color: #444;
+  font-size: 17px;
+}
+
 .featured-flag {
   font-family: "Lora", serif;
   font-size: 9px;
@@ -503,6 +546,61 @@ body {
   border: 1px solid rgba(0,0,0,0.05);
 }
 
+.event-sources {
+  margin-top: 1rem;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.event-sources-label {
+  color: #8c8279;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.event-sources-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 0.1rem;
+  flex-wrap: wrap;
+}
+
+.event-sources-links a {
+  color: var(--ua-blue);
+  text-decoration: none;
+}
+
+.event-sources-links a:hover {
+  text-decoration: underline;
+}
+
+.event-share-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: #8d8d8d;
+  opacity: 0%;
+  text-decoration: none;
+  border-radius: 999px;
+}
+
+.event-share-link::before {
+  content: "↗";
+  font-size: 16px;
+  line-height: 1;
+}
+
+.footer-motto {
+  font-family: "Cinzel", serif;
+  font-size: 16px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
 .footer-bar {
   padding: 6rem 2rem;
   text-align: center;
@@ -545,7 +643,15 @@ body {
 }
 
 @media (max-width: 768px) {
-  .hero { padding: 4rem 1.5rem; }
+  .hero { padding: 4.75rem 1.5rem 4rem; }
+  .language-toggle {
+    top: 1rem;
+    right: 1rem;
+  }
+  .language-toggle-btn {
+    padding: 0.4rem 0.65rem;
+    font-size: 10px;
+  }
   .hero h1 { font-size: 36px; letter-spacing: 2px; }
   .hero .sub { font-size: 12px; letter-spacing: 2px; }
   .trident-icon img { width: 60px; }

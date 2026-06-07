@@ -1,6 +1,8 @@
 import React from "react";
 import { getItemId } from "../data/culture";
 import type { CulturalPillar, CultureItem, Category } from "../data/culture";
+import type { Locale } from "../data/localization";
+import { SITE_COPY } from "../data/siteCopy";
 import EventCard from "./EventCard";
 
 interface EraBlockProps {
@@ -8,6 +10,7 @@ interface EraBlockProps {
   items: CultureItem[];
   originalIndices: number[];
   currentFilter: Category | "all";
+  locale: Locale;
   expandedIndex: number | null;
   onToggleExpand: (index: number) => void;
 }
@@ -17,9 +20,11 @@ export const EraBlock: React.FC<EraBlockProps> = ({
   items,
   originalIndices,
   currentFilter,
+  locale,
   expandedIndex,
   onToggleExpand,
 }: EraBlockProps) => {
+  const copy = SITE_COPY[locale];
   const hasVisible = items.some(
     (e) => currentFilter === "all" || e.category === currentFilter,
   );
@@ -32,18 +37,24 @@ export const EraBlock: React.FC<EraBlockProps> = ({
   return (
     <section className="era-block" id={pillar.id}>
       <div className="era-header">
-        <div className="era-label">{pillar.label}</div>
-        <div className="era-intro">{pillar.intro}</div>
+        <div className="era-label">{pillar.label[locale]}</div>
+        <div className="era-intro">{pillar.intro[locale]}</div>
         <div
           className="era-meta"
           style={{ marginTop: "0.5rem", fontSize: "13px", color: "#8c8279" }}
         >
-          <span>{visibleCount} items in this category</span>
+          <span>
+            {visibleCount}{" "}
+            {visibleCount === 1
+              ? copy.categoryCountLabelSingle
+              : copy.categoryCountLabelPlural}
+          </span>
         </div>
       </div>
       {items.map((item, i) => {
         const globalIndex = originalIndices[i];
-        const hidden = currentFilter !== "all" && item.category !== currentFilter;
+        const hidden =
+          currentFilter !== "all" && item.category !== currentFilter;
 
         if (hidden) return null;
 
@@ -52,6 +63,7 @@ export const EraBlock: React.FC<EraBlockProps> = ({
             key={getItemId(item)}
             itemId={getItemId(item)}
             item={item}
+            locale={locale}
             isExpanded={expandedIndex === globalIndex}
             onToggle={() => onToggleExpand(globalIndex)}
           />

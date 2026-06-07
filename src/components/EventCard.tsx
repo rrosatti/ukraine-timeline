@@ -1,5 +1,9 @@
 import React from "react";
-import type { CultureItem, Category } from "../data/culture";
+import { CATEGORY_LABELS, type Category } from "../data/culture";
+import type { CultureItem } from "../data/culture";
+import { localize } from "../data/localization";
+import type { Locale } from "../data/localization";
+import { SITE_COPY } from "../data/siteCopy";
 import ChevronIcon from "./ChevronIcon";
 
 const badgeClassMap: Record<Category, string> = {
@@ -12,19 +16,10 @@ const badgeClassMap: Record<Category, string> = {
   architecture: "badge-architecture",
 };
 
-const badgeTextMap: Record<Category, string> = {
-  cuisine: "Cuisine",
-  tradition: "Tradition",
-  literature: "Literature",
-  art: "Art",
-  music: "Music",
-  geography: "Geography",
-  architecture: "Architecture",
-};
-
 interface EventCardProps {
   itemId: string;
   item: CultureItem;
+  locale: Locale;
   isExpanded: boolean;
   onToggle: () => void;
 }
@@ -32,12 +27,15 @@ interface EventCardProps {
 export const EventCard: React.FC<EventCardProps> = ({
   itemId,
   item,
+  locale,
   isExpanded,
   onToggle,
 }: EventCardProps) => {
+  const copy = SITE_COPY[locale];
   const className = `event type-${item.category}${item.featured ? " featured" : ""}${isExpanded ? " expanded" : ""}${item.image ? " has-image" : ""}`;
-  const stats = item.stats || [];
+  const stats = item.stats?.[locale] || [];
   const [leadStat, ...otherStats] = stats;
+  const details = item.details?.[locale] || [];
 
   function handleShare(eventClick: React.MouseEvent<HTMLAnchorElement>) {
     eventClick.stopPropagation();
@@ -53,42 +51,48 @@ export const EventCard: React.FC<EventCardProps> = ({
         <div className="event-content-wrapper">
           {item.image && (
             <div className="event-image-container">
-              <img src={item.image} alt={item.title} className="event-image" />
+              <img
+                src={item.image}
+                alt={localize(item.title, locale)}
+                className="event-image"
+              />
             </div>
           )}
           <div className="event-main-content">
             <div className="event-topline">
               <span className={`event-badge ${badgeClassMap[item.category]}`}>
-                {badgeTextMap[item.category]}
+                {CATEGORY_LABELS[locale][item.category]}
               </span>
               <div className="event-actions">
                 <a
                   className="event-share-link"
                   href={`#${itemId}`}
                   onClick={handleShare}
-                  aria-label={`Link to ${item.title}`}
-                  title="Copyable link"
+                  aria-label={`${copy.copyableLinkLabel}: ${localize(item.title, locale)}`}
+                  title={copy.copyableLinkLabel}
                 ></a>
                 <ChevronIcon expanded={isExpanded} />
               </div>
             </div>
             <div className="event-title-row">
               <div className="event-title">
-                {item.title}
+                {localize(item.title, locale)}
                 {item.featured && (
-                  <span className="featured-flag">Featured</span>
+                  <span className="featured-flag">{copy.featuredLabel}</span>
                 )}
               </div>
             </div>
-            <div className="event-summary">{item.summary}</div>
+            <div className="event-summary">
+              {localize(item.summary, locale)}
+            </div>
           </div>
         </div>
 
         <div className="event-expand">
           <div className="event-body">
-            {item.details && item.details.length > 0 && (
+            {details.length > 0 && (
               <ul className="event-details-list">
-                {item.details.map((detail, idx) => (
+                {details.map((detail, idx) => (
                   <li key={idx}>{detail}</li>
                 ))}
               </ul>
@@ -96,51 +100,36 @@ export const EventCard: React.FC<EventCardProps> = ({
 
             {leadStat && (
               <div className="event-lead-stat">
-                <span className="event-lead-stat-label">{leadStat.l}</span>
-                <strong className="event-lead-stat-value">{leadStat.v}</strong>
+                <span className="event-lead-stat-label">{leadStat.label}</span>
+                <strong className="event-lead-stat-value">{leadStat.value}</strong>
               </div>
             )}
 
             {otherStats.length > 0 && (
               <div className="stat-pills">
                 {otherStats.map((stat) => (
-                  <div className="stat-pill" key={stat.l}>
-                    {stat.l}: <strong>{stat.v}</strong>
+                  <div className="stat-pill" key={stat.label}>
+                    {stat.label}: <strong>{stat.value}</strong>
                   </div>
                 ))}
               </div>
             )}
 
             {item.sources && item.sources.length > 0 && (
-              <div
-                className="event-sources"
-                style={{ marginTop: "1rem", fontSize: "13px" }}
-              >
-                <span
-                  style={{
-                    color: "#8c8279",
-                    textTransform: "uppercase",
-                    letterSpacing: "1px",
-                  }}
-                >
-                  Sources:
+              <div className="event-sources">
+                <span className="event-sources-label">
+                  {copy.sourcesLabel}:
                 </span>
-                <div
-                  style={{ display: "flex", gap: "10px", marginTop: "0.5rem" }}
-                >
+                <div className="event-sources-links">
                   {item.sources.map((source, idx) => (
                     <a
                       key={idx}
                       href={source.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{
-                        color: "var(--ua-blue)",
-                        textDecoration: "none",
-                      }}
-                      onClick={(e) => e.stopPropagation()}
+                      onClick={(event) => event.stopPropagation()}
                     >
-                      {source.title}
+                      {localize(source.title, locale)}
                     </a>
                   ))}
                 </div>
