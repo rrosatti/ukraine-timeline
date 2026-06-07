@@ -365,12 +365,12 @@ body {
   border: 1px solid rgba(0,0,0,0.05);
 }
 
-.badge-cuisine { color: var(--color-ruler); }
-.badge-tradition { color: var(--color-culture); }
-.badge-literature { color: var(--color-milestone); }
-.badge-art { color: var(--color-ruler); }
-.badge-music { color: var(--color-culture); }
-.badge-geography { color: var(--color-milestone); }
+.badge-cuisine { color: white; background: var(--color-ruler); }
+.badge-tradition { color: white; background: var(--color-culture); }
+.badge-literature { color: white; background: var(--color-milestone); }
+.badge-art { color: white; background: var(--color-ruler); }
+.badge-music { color: white; background: var(--color-culture); }
+.badge-geography { color: white; background: var(--color-milestone); }
 .badge-architecture { color: white; background: var(--color-conflict); }
 
 .event-actions {
@@ -412,10 +412,36 @@ body {
   font-weight: 700;
 }
 
-.event-summary {
-  font-size: 18px;
-  color: #333;
-  line-height: 1.6;
+.event-content-wrapper {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.event-main-content {
+  flex: 1;
+}
+
+.event-image-container {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.event-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .event-content-wrapper {
+    flex-direction: column;
+  }
+  .event-image-container {
+    width: 100%;
+    margin-top: 1rem;
+  }
 }
 
 .event-expand {
@@ -488,11 +514,12 @@ body {
   gap: 1.5rem;
 }
 
-.footer-motto {
-  color: #999;
-  font-family: "Cinzel", serif;
-  letter-spacing: 4px;
-  font-size: 16px;
+.footer-note {
+  font-size: 11px;
+  color: #777;
+  font-family: sans-serif;
+  letter-spacing: normal;
+  margin-top: 0.5rem;
 }
 
 .github-link {
@@ -553,6 +580,12 @@ body {
   .event-lead-stat-value { font-size: 24px; }
   .event-details-list li { font-size: 15px; }
 
-  .footer-bar { padding: 4rem 1.5rem; gap: 1rem; }
+  .footer-bar { padding: 4rem 1.5rem; gap: 0.5rem; }
   .footer-motto { font-size: 13px; letter-spacing: 2px; }
+  .footer-note {
+    font-size: 11px;
+    color: #777;
+    font-family: sans-serif;
+    letter-spacing: normal;
+  }
 }

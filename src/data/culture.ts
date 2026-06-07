@@ -23,6 +23,7 @@ export interface CultureItem {
   stats?: Stat[];
   sources?: { title: string; url: string }[];
   featured?: boolean;
+  image?: string;
 }
 
 export interface CulturalPillar {
@@ -97,6 +98,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
       },
     ],
     featured: true,
+    image: "src/assets/borscht.png",
   },
   {
     id: "varenyky",
@@ -116,6 +118,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/F/O/Food.htm",
       },
     ],
+    image: "src/assets/vareniki.png",
   },
   {
     id: "holubtsi",
@@ -135,6 +138,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/F/O/Food.htm",
       },
     ],
+    image: "src/assets/holubtsi.png",
   },
   // Traditions
   {
@@ -156,6 +160,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/E/M/Embroidery.htm",
       },
     ],
+    image: "src/assets/vyshyvanka.png",
   },
   {
     id: "ivana-kupala",
@@ -174,6 +179,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/K/U/Kupalo.htm",
       },
     ],
+    image: "src/assets/IVANA_KUPALA.png",
   },
   // Literature
   {
@@ -194,6 +200,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/K/O/Kobzar.htm",
       },
     ],
+    image: "src/assets/kobzar.png",
   },
   {
     id: "lesya-ukrainka",
@@ -213,6 +220,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/K/O/KosachLesia.htm",
       },
     ],
+    image: "src/assets/lesya-ukrainka.png",
   },
   // Art
   {
@@ -234,6 +242,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/P/R/PrymachenkoMaria.htm",
       },
     ],
+    image: "src/assets/maria-prymachenko.png",
   },
   // Music
   {
@@ -254,6 +263,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/B/A/Bandura.htm",
       },
     ],
+    image: "src/assets/bandura.png",
   },
   {
     id: "shchedryk",
@@ -273,6 +283,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/M/U/Music.htm",
       },
     ],
+    image: "src/assets/shchedryk.png",
   },
   // Geography
   {
@@ -293,6 +304,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/C/A/CarpathianMountains.htm",
       },
     ],
+    image: "src/assets/carpathian-mountains.png",
   },
   // Architecture
   {
@@ -314,6 +326,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/S/A/SaintSophiaCathedral.htm",
       },
     ],
+    image: "src/assets/st-sophia-cathedral.png",
   },
   {
     id: "saint-andrews-church",
@@ -333,5 +346,6 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/K/Y/Kyiv.htm",
       },
     ],
+    image: "src/assets/st-andrews-church.png",
   },
 ];
