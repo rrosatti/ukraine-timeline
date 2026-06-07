@@ -1,4 +1,17 @@
 import type { Locale, Localized, LocalizedArray, LocalizedText } from "./localization";
+import borschtImg from "../assets/borscht.png";
+import varenikiImg from "../assets/vareniki.png";
+import holubtsiImg from "../assets/holubtsi.png";
+import vyshyvankaImg from "../assets/vyshyvanka.png";
+import ivanaKupalaImg from "../assets/IVANA_KUPALA.png";
+import kobzarImg from "../assets/kobzar.png";
+import lesyaUkrainkaImg from "../assets/lesya-ukrainka.png";
+import mariaPrymachenkoImg from "../assets/maria-prymachenko.png";
+import banduraImg from "../assets/bandura.png";
+import shchedrykImg from "../assets/shchedryk.png";
+import carpathianMountainsImg from "../assets/carpathian-mountains.png";
+import stSophiaCathedralImg from "../assets/st-sophia-cathedral.png";
+import stAndrewsChurchImg from "../assets/st-andrews-church.png";
 
 export type Category =
   | "cuisine"
@@ -186,7 +199,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
       },
     ],
     featured: true,
-    image: "src/assets/borscht.png",
+    image: borschtImg,
   },
   {
     id: "varenyky",
@@ -223,7 +236,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/F/O/Food.htm",
       },
     ],
-    image: "src/assets/vareniki.png",
+    image: varenikiImg,
   },
   {
     id: "holubtsi",
@@ -260,7 +273,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/F/O/Food.htm",
       },
     ],
-    image: "src/assets/holubtsi.png",
+    image: holubtsiImg,
   },
   {
     id: "vyshyvanka",
@@ -297,7 +310,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/E/M/Embroidery.htm",
       },
     ],
-    image: "src/assets/vyshyvanka.png",
+    image: vyshyvankaImg,
   },
   {
     id: "ivana-kupala",
@@ -332,7 +345,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/K/U/Kupalo.htm",
       },
     ],
-    image: "src/assets/IVANA_KUPALA.png",
+    image: ivanaKupalaImg,
   },
   {
     id: "kobzar",
@@ -369,7 +382,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/K/O/Kobzar.htm",
       },
     ],
-    image: "src/assets/kobzar.png",
+    image: kobzarImg,
   },
   {
     id: "lesya-ukrainka",
@@ -406,7 +419,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/K/O/KosachLesia.htm",
       },
     ],
-    image: "src/assets/lesya-ukrainka.png",
+    image: lesyaUkrainkaImg,
   },
   {
     id: "maria-prymachenko",
@@ -443,7 +456,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/P/R/PrymachenkoMaria.htm",
       },
     ],
-    image: "src/assets/maria-prymachenko.png",
+    image: mariaPrymachenkoImg,
   },
   {
     id: "bandura",
@@ -480,7 +493,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/B/A/Bandura.htm",
       },
     ],
-    image: "src/assets/bandura.png",
+    image: banduraImg,
   },
   {
     id: "shchedryk",
@@ -517,7 +530,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/M/U/Music.htm",
       },
     ],
-    image: "src/assets/shchedryk.png",
+    image: shchedrykImg,
   },
   {
     id: "carpathian-mountains",
@@ -548,7 +561,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/C/A/CarpathianMountains.htm",
       },
     ],
-    image: "src/assets/carpathian-mountains.png",
+    image: carpathianMountainsImg,
   },
   {
     id: "st-sophia-cathedral",
@@ -579,7 +592,7 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/S/A/SaintSophiaCathedral.htm",
       },
     ],
-    image: "src/assets/st-sophia-cathedral.png",
+    image: stSophiaCathedralImg,
   },
   {
     id: "saint-andrews-church",
@@ -610,6 +623,6 @@ export const CULTURE_ITEMS: CultureItem[] = [
         url: "http://www.encyclopediaofukraine.com/display.asp?linkpath=pages/K/Y/Kyiv.htm",
       },
     ],
-    image: "src/assets/st-andrews-church.png",
+    image: stAndrewsChurchImg,
   },
 ];
