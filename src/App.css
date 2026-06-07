@@ -15,12 +15,12 @@ html {
   --ua-blue: #005bbb;
   --ua-gold: #ffd500;
   
-  /* Modern Neutrals */
-  --bg-primary: #f5f5f7;      /* Soft Gallery Grey */
+  /* Modern Neutrals - Warmer, Paper-like tones */
+  --bg-primary: #f8f5f0;      /* Warm Parchment / Linen */
   --bg-card: #ffffff;
   --text-main: #1a1a1a;
   --text-muted: #5a5a5a;
-  --timeline-line: #dcdcdc;
+  --timeline-line: #e2dfda;
   
   /* Category Colors (Strong) */
   --color-ruler: #c19a6b;
@@ -28,13 +28,13 @@ html {
   --color-milestone: #2f5233;
   --color-conflict: #000000;
 
-  /* Category Colors (Light Tints for Card Backgrounds) */
-  --bg-ruler: #fdf8f2;
-  --bg-culture: #fdf4f4;
-  --bg-milestone: #f2f7f3;
-  --bg-conflict: #f4f4f4;
+  /* Category Colors (Soft Tints for Card Backgrounds) */
+  --bg-ruler: #fefaf4;
+  --bg-culture: #fef5f5;
+  --bg-milestone: #f5f9f6;
+  --bg-conflict: #f7f7f7;
 
-  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.04);
+  --shadow-soft: 0 4px 25px rgba(0, 0, 0, 0.03);
 }
 
 body {
@@ -50,7 +50,7 @@ body {
 
 /* --- Hero --- */
 .hero {
-  background: white;
+  background: var(--bg-primary);
   padding: 6rem 2rem;
   text-align: center;
   border-bottom: 1px solid var(--timeline-line);
@@ -191,7 +191,7 @@ body {
   justify-content: center;
   gap: 2rem;
   padding: 1rem 2rem;
-  background: #ffffff;
+  background: var(--bg-primary);
   border-bottom: 1px solid var(--timeline-line);
   overflow-x: auto;
   scrollbar-width: none;
@@ -471,7 +471,7 @@ body {
 .footer-bar {
   padding: 6rem 2rem;
   text-align: center;
-  background: white;
+  background: var(--bg-primary);
   border-top: 1px solid var(--timeline-line);
   color: #999;
   font-family: "Cinzel", serif;
