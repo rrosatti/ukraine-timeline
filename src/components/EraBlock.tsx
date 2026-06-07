@@ -20,7 +20,7 @@ export const EraBlock: React.FC<EraBlockProps> = ({
   expandedIndex,
   onToggleExpand,
 }: EraBlockProps) => {
-  const [title, range] = era.label.split("·").map((part) => part.trim());
+  const [title] = era.label.split("·").map((part) => part.trim());
   const hasVisible = events.some(
     (e) => currentFilter === "all" || e.category === currentFilter,
   );
@@ -35,13 +35,17 @@ export const EraBlock: React.FC<EraBlockProps> = ({
       <div className="era-header">
         <div className="era-label">{title}</div>
         <div className="era-intro">{era.intro}</div>
-        <div className="era-meta" style={{ marginTop: '0.5rem', fontSize: '13px', color: '#8c8279' }}>
+        <div
+          className="era-meta"
+          style={{ marginTop: "0.5rem", fontSize: "13px", color: "#8c8279" }}
+        >
           <span>{visibleCount} events in this period</span>
         </div>
       </div>
       {events.map((event, i) => {
         const globalIndex = originalIndices[i];
-        const hidden = currentFilter !== "all" && event.category !== currentFilter;
+        const hidden =
+          currentFilter !== "all" && event.category !== currentFilter;
 
         if (hidden) return null;
 
