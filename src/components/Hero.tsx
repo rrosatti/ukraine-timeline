@@ -5,7 +5,6 @@ const metaStats = [
   { num: "1,000+", label: "Years of History" },
   { num: "24", label: "UNESCO Assets" },
   { num: "7", label: "Bordering Countries" },
-  { num: "1", label: "Unbroken Spirit" },
 ];
 
 export const Hero: React.FC = () => {
