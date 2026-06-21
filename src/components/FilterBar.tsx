@@ -32,6 +32,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
     { key: "music", typeClass: "music" },
     { key: "geography", typeClass: "geography" },
     { key: "architecture", typeClass: "architecture" },
+    { key: "history", typeClass: "history" },
   ];
 
   return (
@@ -42,9 +43,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           .filter(Boolean)
           .join(" ");
         const label =
-          key === "all"
-            ? copy.filters.all
-            : CATEGORY_LABELS[locale][key];
+          key === "all" ? copy.filters.all : CATEGORY_LABELS[locale][key];
 
         return (
           <button

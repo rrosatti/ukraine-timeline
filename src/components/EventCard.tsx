@@ -14,6 +14,7 @@ const badgeClassMap: Record<Category, string> = {
   music: "badge-music",
   geography: "badge-geography",
   architecture: "badge-architecture",
+  history: "badge-history",
 };
 
 interface EventCardProps {
@@ -101,7 +102,9 @@ export const EventCard: React.FC<EventCardProps> = ({
             {leadStat && (
               <div className="event-lead-stat">
                 <span className="event-lead-stat-label">{leadStat.label}</span>
-                <strong className="event-lead-stat-value">{leadStat.value}</strong>
+                <strong className="event-lead-stat-value">
+                  {leadStat.value}
+                </strong>
               </div>
             )}
 
