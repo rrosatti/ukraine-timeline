@@ -27,12 +27,14 @@ html {
   --color-culture: #bd3a42;
   --color-milestone: #2f5233;
   --color-conflict: #000000;
+  --color-history: #1a5276;
 
   /* Category Colors (Soft Tints for Card Backgrounds) */
   --bg-ruler: #fefaf4;
   --bg-culture: #fef5f5;
   --bg-milestone: #f5f9f6;
   --bg-conflict: #f7f7f7;
+  --bg-history: #f0f4f8;
 
   --shadow-soft: 0 4px 25px rgba(0, 0, 0, 0.03);
 }
@@ -225,6 +227,7 @@ body {
 .filter-btn.active.music { background: var(--color-culture); border-color: var(--color-culture); }
 .filter-btn.active.geography { background: var(--color-milestone); border-color: var(--color-milestone); }
 .filter-btn.active.architecture { background: var(--color-conflict); border-color: var(--color-conflict); }
+.filter-btn.active.history { background: var(--color-history); border-color: var(--color-history); }
 
 .era-jump-nav {
   display: flex;
@@ -375,6 +378,7 @@ body {
 .type-music .event-card { background: var(--bg-culture); border-left-color: var(--color-culture); }
 .type-geography .event-card { background: var(--bg-milestone); border-left-color: var(--color-milestone); }
 .type-architecture .event-card { background: var(--bg-conflict); border-left-color: var(--color-conflict); }
+.type-history .event-card { background: var(--bg-history); border-left-color: var(--color-history); }
 
 .event:hover .event-card {
   box-shadow: 0 20px 50px rgba(0,0,0,0.06);
@@ -410,6 +414,7 @@ body {
 .badge-music { color: white; background: var(--color-culture); }
 .badge-geography { color: white; background: var(--color-milestone); }
 .badge-architecture { color: white; background: var(--color-conflict); }
+.badge-history { color: white; background: var(--color-history); }
 
 .event-actions {
   display: flex;
